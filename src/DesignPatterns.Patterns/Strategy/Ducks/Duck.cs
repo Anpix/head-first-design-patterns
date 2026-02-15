@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Patterns.Strategy.Behaviors.Fly;
 using DesignPatterns.Patterns.Strategy.Behaviors.Quacks;
+using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Strategy.Ducks;
 

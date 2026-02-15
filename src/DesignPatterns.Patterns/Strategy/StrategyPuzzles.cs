@@ -1,10 +1,8 @@
-using DesignPatterns.Patterns.Strategy.Animals;
-using DesignPatterns.Patterns.Strategy.Behaviors.Fly;
 using DesignPatterns.Patterns.Strategy.Behaviors.Weapons;
 using DesignPatterns.Patterns.Strategy.Characters;
-using DesignPatterns.Patterns.Strategy.Ducks;
+using DesignPatterns.Patterns.Utils;
 
-namespace DesignPatterns.Patterns.Strategy.Exercises;
+namespace DesignPatterns.Patterns.Strategy;
 
 public class PuzzleExercises
 {
@@ -15,7 +13,7 @@ public class PuzzleExercises
 
     public static void Page25()
     {
-        ConsoleUtils.WriteHeader("Page 25");
+        LogUtils.Header("Page 25");
 
         var king = new King();
         king.SetWeaponBehavior(new ArrowBehavior());

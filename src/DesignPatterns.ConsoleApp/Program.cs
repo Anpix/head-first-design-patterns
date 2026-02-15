@@ -1,6 +1,6 @@
-﻿using DesignPatterns.Patterns.Strategy.Exercises;
+﻿using DesignPatterns.ConsoleApp.Handlers;
 
-Console.Clear();
-Console.WriteLine("Running Exercises...");
-var chapter1Exercises = new StrategyExercises();
-var chapter1Puzzle = new PuzzleExercises();
+while (true)
+{
+    MainMenuHandler.MainMenu();
+}
