@@ -1,12 +1,16 @@
-﻿namespace DesignPatterns.Patterns.Strategy.Ducks;
+﻿using DesignPatterns.Patterns.Strategy.Behaviors.Fly;
+
+namespace DesignPatterns.Patterns.Strategy.Ducks;
 
 public abstract class Duck
 {
     public string Name { get; protected set; }
+    public IFlyBehavior? FlyBehavior { get; protected set; }
 
-    public Duck(string name)
+    public Duck(string name, IFlyBehavior? flyBehavior = null)
     {
         Name = $"{name} Duck";
+        FlyBehavior = flyBehavior;
 
         Act();
     }
@@ -17,7 +21,7 @@ public abstract class Duck
         Console.WriteLine($"My name is {Name}.");
         Quack();
         Swim();
-        Fly();
+        FlyBehavior?.Fly();
         Display();
     }
 
@@ -29,11 +33,6 @@ public abstract class Duck
     public virtual void Swim()
     {
         Console.WriteLine($"I'm swimming.");
-    }
-
-    public virtual void Fly()
-    {
-        Console.WriteLine($"I'm flying.");
     }
 
     public virtual void Display()
