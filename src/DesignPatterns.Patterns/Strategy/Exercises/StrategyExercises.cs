@@ -6,12 +6,14 @@ public class StrategyExercises
 {
     public StrategyExercises()
     {
-        Page2();
+        Page4();
     }
 
-    public void Page2()
+    public static void Page4()
     {
         var mallardDuck = new MallardDuck();
         var redheadDuck = new RedheadDuck();
+        var rubberDuck = new RubberDuck();
+        var decoyDuck = new DecoyDuck();
     }
 }
