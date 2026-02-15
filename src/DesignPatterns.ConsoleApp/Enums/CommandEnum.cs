@@ -1,4 +1,4 @@
-namespace DesignPatterns.ConsoleApp.Handlers;
+namespace DesignPatterns.ConsoleApp.Enums;
 
 public enum CommandEnum
 {

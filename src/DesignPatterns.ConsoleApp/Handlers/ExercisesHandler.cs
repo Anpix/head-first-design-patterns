@@ -1,3 +1,4 @@
+using DesignPatterns.ConsoleApp.Enums;
 using DesignPatterns.Patterns.Strategy;
 using DesignPatterns.Patterns.Utils;
 
