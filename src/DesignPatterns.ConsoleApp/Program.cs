@@ -2,4 +2,5 @@
 
 Console.Clear();
 Console.WriteLine("Running Exercises...");
-var exercises = new StrategyExercises();
+var chapter1Exercises = new StrategyExercises();
+var chapter1Puzzle = new PuzzleExercises();
