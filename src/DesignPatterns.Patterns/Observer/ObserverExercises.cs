@@ -10,42 +10,48 @@ public class ObserverExercises : Exercise
     public override void Run()
     {
         LogUtils.Header("Observer Exercises");
-        Page41();
+        Page42();
     }
 
-    public static void Page41()
+    public static void Page42()
     {
-        LogUtils.SubHeader("Page 41");
+        LogUtils.SubHeader("Page 42");
 
-        var currentConditionsDisplay = new CurrentConditionsDisplay();
-        var statisticsDisplay = new StatisticsDisplay();
-        var forecastDisplay = new ForecastDisplay();
-        var thirdPartDisplay = new ThirdPartDisplay();
 
         LogUtils.Info("Creating weather data...");
         var weatherData = new WeatherData();
-        LogUtils.Info("Registering observers...");
-        weatherData.RegisterObserver(currentConditionsDisplay);
-        weatherData.RegisterObserver(statisticsDisplay);
-        weatherData.RegisterObserver(forecastDisplay);
-        weatherData.RegisterObserver(thirdPartDisplay);
+
+        LogUtils.Info("Creating displays...");
+        var currentConditionsDisplay = new CurrentConditionsDisplay(weatherData);
+        var statisticsDisplay = new StatisticsDisplay(weatherData);
+        var forecastDisplay = new ForecastDisplay(weatherData);
+        var thirdPartDisplay = new ThirdPartDisplay(weatherData);
 
         LogUtils.Info("Simulating weather data changes...");
         weatherData.MeasurementsChanged();
         ConsoleUtils.WriteSeparator();
 
-        LogUtils.Info("Removing ThirdPartDisplay and StatisticsDisplay observers...");
-        weatherData.RemoveObserver(thirdPartDisplay);
-        weatherData.RemoveObserver(statisticsDisplay);
+        LogUtils.Warning("Removing ThirdPartDisplay and StatisticsDisplay observers...");
+        thirdPartDisplay.Unsubscribe();
+        statisticsDisplay.Unsubscribe();
         LogUtils.Info("Simulating weather data changes...");
         weatherData.MeasurementsChanged();
         ConsoleUtils.WriteSeparator();
 
-        LogUtils.Info("Adding back StatisticsDisplay observer...");
-        weatherData.RegisterObserver(statisticsDisplay);
+        LogUtils.Warning("Adding back StatisticsDisplay observer...");
+        statisticsDisplay.Subscribe();
         LogUtils.Info("Simulating weather data changes...");
         weatherData.MeasurementsChanged();
         ConsoleUtils.WriteSeparator();
+
+        LogUtils.Warning("Removing All observers...");
+        currentConditionsDisplay.Unsubscribe();
+        statisticsDisplay.Unsubscribe();
+        forecastDisplay.Unsubscribe();
+        thirdPartDisplay.Unsubscribe();
+        LogUtils.Info("Simulating weather data changes...");
+        weatherData.MeasurementsChanged();
+        LogUtils.Success("Should not receive any updates");
 
         LogUtils.Footer();
     }

@@ -1,3 +1,4 @@
+using DesignPatterns.Patterns.Observer.Core.Subjects;
 using DesignPatterns.Patterns.Observer.Displays;
 using DesignPatterns.Patterns.Utils;
 
@@ -5,7 +6,7 @@ namespace DesignPatterns.Patterns.Observer.Core.Displays;
 
 public class Display : Observers.Observer, IDisplay
 {
-    public Display(string name) : base(name)
+    public Display(string name, ISubject subject) : base(name, subject)
     {
     }
 

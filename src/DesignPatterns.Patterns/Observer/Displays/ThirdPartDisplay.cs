@@ -1,11 +1,12 @@
 using DesignPatterns.Patterns.Observer.Core.Displays;
+using DesignPatterns.Patterns.Observer.Core.Subjects;
 using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Observer.Displays;
 
 public class ThirdPartDisplay : Display
 {
-    public ThirdPartDisplay() : base("Third Part Display")
+    public ThirdPartDisplay(ISubject subject) : base("Third Part Display", subject)
     {
     }
 
