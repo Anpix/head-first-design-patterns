@@ -1,4 +1,5 @@
 using DesignPatterns.Patterns.Strategy.Animals;
+using DesignPatterns.Patterns.Strategy.Behaviors.Fly;
 using DesignPatterns.Patterns.Strategy.Ducks;
 
 namespace DesignPatterns.Patterns.Strategy.Exercises;
@@ -9,6 +10,7 @@ public class StrategyExercises
     {
         Page8();
         Page9();
+        Page15();
     }
 
     public static void Page8()
@@ -30,6 +32,15 @@ public class StrategyExercises
         Console.WriteLine("Animal: Cat");
         Animal animalB = new Cat();
         animalB.MakeSound();
+        Console.WriteLine();
+    }
+
+    public static void Page15()
+    {
+        ConsoleUtils.WriteHeader("Page 15");
+        var duck = new ModelDuck();
+        duck.SetFlyBehavior(new FlyRocketPowered());
+        duck.PerformFly();
         Console.WriteLine();
     }
 }

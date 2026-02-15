@@ -29,6 +29,16 @@ public abstract class Duck
         Console.WriteLine();
     }
 
+    public void SetFlyBehavior(IFlyBehavior flyBehavior)
+    {
+        FlyBehavior = flyBehavior;
+    }
+
+    public void SetQuackBehavior(IQuackBehavior quackBehavior)
+    {
+        QuackBehavior = quackBehavior;
+    }
+
     public void PerformQuack()
     {
         QuackBehavior?.Quack();

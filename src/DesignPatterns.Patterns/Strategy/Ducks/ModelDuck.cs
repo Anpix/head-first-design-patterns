@@ -3,9 +3,9 @@ using DesignPatterns.Patterns.Strategy.Behaviors.Quacks;
 
 namespace DesignPatterns.Patterns.Strategy.Ducks;
 
-public class MallardDuck : Duck
+public class ModelDuck : Duck
 {
-    public MallardDuck() : base("Mallard Duck", new FlyWithWings(), new Quack())
+    public ModelDuck() : base("Model Duck", new FlyNoWay(), new MuteQuack())
     {
     }
 }
