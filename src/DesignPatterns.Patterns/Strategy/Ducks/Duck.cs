@@ -1,16 +1,19 @@
 ﻿using DesignPatterns.Patterns.Strategy.Behaviors.Fly;
+using DesignPatterns.Patterns.Strategy.Behaviors.Quacks;
 
 namespace DesignPatterns.Patterns.Strategy.Ducks;
 
 public abstract class Duck
 {
     public string Name { get; protected set; }
-    public IFlyBehavior? FlyBehavior { get; protected set; }
+    public IFlyBehavior FlyBehavior { get; protected set; }
+    public IQuackBehavior QuackBehavior { get; protected set; }
 
-    public Duck(string name, IFlyBehavior? flyBehavior = null)
+    public Duck(string name, IFlyBehavior flyBehavior, IQuackBehavior quackBehavior)
     {
-        Name = $"{name} Duck";
+        Name = name;
         FlyBehavior = flyBehavior;
+        QuackBehavior = quackBehavior;
 
         Act();
     }
@@ -19,15 +22,10 @@ public abstract class Duck
     {
         Console.WriteLine($"-----");
         Console.WriteLine($"My name is {Name}.");
-        Quack();
+        QuackBehavior?.Quack();
         Swim();
         FlyBehavior?.Fly();
         Display();
-    }
-
-    public virtual void Quack()
-    {
-        Console.WriteLine($"I'm quacking.");
     }
 
     public virtual void Swim()
