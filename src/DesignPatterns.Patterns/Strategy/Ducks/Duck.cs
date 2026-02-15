@@ -6,31 +6,39 @@ public abstract class Duck
 
     public Duck(string name)
     {
-        this.Name = $"{name} Duck";
+        Name = $"{name} Duck";
 
-        this.Quack();
-        this.Swim();
-        this.Fly();
-        this.Display();
+        Act();
+    }
+
+    public void Act()
+    {
+        Console.WriteLine($"-----");
+        Console.WriteLine($"My name is {Name}.");
+        Quack();
+        Swim();
+        Fly();
+        Display();
     }
 
     public virtual void Quack()
     {
-        Console.WriteLine($"{Name} is quacking.");
+        Console.WriteLine($"I'm quacking.");
     }
 
     public virtual void Swim()
     {
-        Console.WriteLine($"{Name} is swimming.");
+        Console.WriteLine($"I'm swimming.");
     }
 
     public virtual void Fly()
     {
-        Console.WriteLine($"{Name} is flying.");
+        Console.WriteLine($"I'm flying.");
     }
 
     public virtual void Display()
     {
-        Console.WriteLine($"Looks like a {Name}.");
+        Console.WriteLine($"I look like a {Name}.");
+
     }
 }
