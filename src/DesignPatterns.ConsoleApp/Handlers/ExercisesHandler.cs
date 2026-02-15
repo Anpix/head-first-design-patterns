@@ -7,7 +7,7 @@ public static class ExercisesHandler
 {
     public static void HandleCommand(CommandEnum command)
     {
-        Console.Clear();
+        ConsoleUtils.Clear();
         switch (command)
         {
             case CommandEnum.STRATEGY:

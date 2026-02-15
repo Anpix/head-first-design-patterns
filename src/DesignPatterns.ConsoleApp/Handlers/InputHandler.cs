@@ -6,9 +6,9 @@ public static class InputHandler
 {
     public static void ReadInput()
     {
-        Console.WriteLine();
-        Console.Write("Inform the option number: ");
-        var input = Console.ReadLine();
+        ConsoleUtils.Clear();
+        ConsoleUtils.WriteInfo("Inform the option number: ");
+        var input = ConsoleUtils.ReadInput();
         if (input == null) return;
 
         HandleInput(input);

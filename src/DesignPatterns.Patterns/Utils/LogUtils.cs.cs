@@ -20,15 +20,23 @@ public static class LogUtils
         Console.WriteLine();
     }
 
-    public static void Info(string info)
+    public static void Info(string message)
     {
-        Console.WriteLine(info);
+        ConsoleUtils.WriteInfo(message);
     }
 
-    public static void Error(string error)
+    public static void Success(string message)
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine(error);
-        Console.ResetColor();
+        ConsoleUtils.WriteColor(message, ConsoleColor.Green);
+    }
+
+    public static void Warning(string message)
+    {
+        ConsoleUtils.WriteColor(message, ConsoleColor.Yellow);
+    }
+
+    public static void Error(string message)
+    {
+        ConsoleUtils.WriteColor(message, ConsoleColor.Red);
     }
 }

@@ -6,7 +6,7 @@ public static class MainMenuHandler
 {
     public static void MainMenu()
     {
-        Console.Clear();
+        ConsoleUtils.Clear();
         LogUtils.Header("Design Patterns Console App");
         LogOptions();
         InputHandler.ReadInput();
@@ -14,8 +14,8 @@ public static class MainMenuHandler
 
     public static void LogOptions()
     {
-        Console.WriteLine("Options:");
-        Console.WriteLine("0. Exit");
-        Console.WriteLine("1. Strategy");
+        ConsoleUtils.WriteInfo("Options:");
+        ConsoleUtils.WriteInfo("0. Exit");
+        ConsoleUtils.WriteInfo("1. Strategy");
     }
 }
