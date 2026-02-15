@@ -17,5 +17,6 @@ public static class MainMenuHandler
         ConsoleUtils.WriteInfo("Options:");
         ConsoleUtils.WriteInfo("0. Exit");
         ConsoleUtils.WriteInfo("1. Strategy");
+        ConsoleUtils.WriteInfo("2. Observer");
     }
 }
