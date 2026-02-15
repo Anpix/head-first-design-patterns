@@ -14,6 +14,17 @@ public static class LogUtils
         Console.WriteLine();
     }
 
+    public static void Footer()
+    {
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+
+    public static void Info(string info)
+    {
+        Console.WriteLine(info);
+    }
+
     public static void Error(string error)
     {
         Console.ForegroundColor = ConsoleColor.Red;

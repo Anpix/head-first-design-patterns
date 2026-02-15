@@ -16,5 +16,6 @@ public static class MainMenuHandler
     {
         Console.WriteLine("Options:");
         Console.WriteLine("0. Exit");
+        Console.WriteLine("1. Strategy");
     }
 }
