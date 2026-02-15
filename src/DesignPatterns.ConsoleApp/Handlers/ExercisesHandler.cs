@@ -1,4 +1,5 @@
 using DesignPatterns.ConsoleApp.Enums;
+using DesignPatterns.Patterns.Observer;
 using DesignPatterns.Patterns.Strategy;
 using DesignPatterns.Patterns.Utils;
 
@@ -12,8 +13,11 @@ public static class ExercisesHandler
         switch (command)
         {
             case CommandEnum.STRATEGY:
-                new StrategyExercises().Run();
-                new StrategyPuzzles().Run();
+                StrategyExercises.Run();
+                StrategyPuzzles.Run();
+                break;
+            case CommandEnum.OBSERVER:
+                ObserverExercises.Run();
                 break;
             case CommandEnum.EXIT:
                 Environment.Exit(0);

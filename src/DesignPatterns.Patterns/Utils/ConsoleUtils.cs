@@ -24,7 +24,6 @@ public static class ConsoleUtils
         var startEnd = new string(character, 2);
         var fullTitle = $"{startEnd} {title} {startEnd}";
 
-        ConsoleUtils.Empty();
         WriteSeparator(character, fullTitle.Length);
         ConsoleUtils.WriteInfo(fullTitle);
         WriteSeparator(character, fullTitle.Length);

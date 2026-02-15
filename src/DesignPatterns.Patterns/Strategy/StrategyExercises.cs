@@ -6,9 +6,9 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Strategy;
 
-public class StrategyExercises : Exercise
+public class StrategyExercises : IExercise
 {
-    public override void Run()
+    public static void Run()
     {
         LogUtils.Header("Strategy Exercises");
 
