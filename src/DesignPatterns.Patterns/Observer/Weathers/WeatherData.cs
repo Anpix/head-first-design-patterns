@@ -1,14 +1,9 @@
-using DesignPatterns.Patterns.Observer.Displays;
+using DesignPatterns.Patterns.Observer.Core.Subjects;
 
 namespace DesignPatterns.Patterns.Observer.Weathers;
 
-public class WeatherData
+public class WeatherData : Subject
 {
-    public CurrentConditionsDisplay? CurrentConditionsDisplay { get; set; }
-    public StatisticsDisplay? StatisticsDisplay { get; set; }
-    public ForecastDisplay? ForecastDisplay { get; set; }
-    public ThirdPartDisplay? ThirdPartDisplay { get; set; }
-
     public float GetTemperature()
     {
         return Random.Shared.Next(-10, 40);
@@ -26,13 +21,10 @@ public class WeatherData
 
     public void MeasurementsChanged()
     {
-        var temperature = GetTemperature();
-        var humidity = GetHumidity();
-        var pressure = GetPressure();
+        Temperature = GetTemperature();
+        Humidity = GetHumidity();
+        Pressure = GetPressure();
 
-        CurrentConditionsDisplay?.Update(temperature, humidity, pressure);
-        StatisticsDisplay?.Update(temperature, humidity, pressure);
-        ForecastDisplay?.Update(temperature, humidity, pressure);
-        ThirdPartDisplay?.Update(temperature, humidity, pressure);
+        NotifyObservers();
     }
 }

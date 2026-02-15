@@ -10,27 +10,25 @@ public class ObserverExercises : Exercise
     public override void Run()
     {
         LogUtils.Header("Observer Exercises");
-        Page31();
+        Page37();
     }
 
-    public static void Page31()
+    public static void Page37()
     {
-        LogUtils.SubHeader("Page 31");
+        LogUtils.SubHeader("Page 37");
 
-        var weatherData = new WeatherData
-        {
-            CurrentConditionsDisplay = new CurrentConditionsDisplay(),
-            StatisticsDisplay = new StatisticsDisplay(),
-            ForecastDisplay = new ForecastDisplay(),
-            ThirdPartDisplay = new ThirdPartDisplay()
-        };
+        var weatherData = new WeatherData();
+        weatherData.RegisterObserver(new CurrentConditionsDisplay());
+        weatherData.RegisterObserver(new StatisticsDisplay());
+        weatherData.RegisterObserver(new ForecastDisplay());
+        weatherData.RegisterObserver(new ThirdPartDisplay());
 
         LogUtils.Info("Simulating weather data changes...");
         for (int i = 0; i < 5; i++)
         {
             ConsoleUtils.WriteSeparator();
             weatherData.MeasurementsChanged();
-            System.Threading.Thread.Sleep(200);
+            Thread.Sleep(200);
         }
 
         LogUtils.Footer();
