@@ -11,6 +11,7 @@ public class ObserverExercises : Exercise
     {
         LogUtils.Header("Observer Exercises");
         Page42();
+        Page43();
     }
 
     public static void Page42()
@@ -53,6 +54,13 @@ public class ObserverExercises : Exercise
         weatherData.MeasurementsChanged();
         LogUtils.Success("Should not receive any updates");
 
+        LogUtils.Footer();
+    }
+
+    public static void Page43()
+    {
+        LogUtils.SubHeader("Page 43");
+        WeatherStation.Run();
         LogUtils.Footer();
     }
 }
