@@ -20,12 +20,13 @@ public abstract class Duck
 
     public void Act()
     {
-        Console.WriteLine($"-----");
+        ConsoleUtils.WriteSeparator();
         Console.WriteLine($"My name is {Name}.");
         PerformQuack();
         Swim();
         PerformFly();
         Display();
+        Console.WriteLine();
     }
 
     public void PerformQuack()
