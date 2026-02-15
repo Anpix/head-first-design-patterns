@@ -10,12 +10,12 @@ public class ObserverExercises : Exercise
     public override void Run()
     {
         LogUtils.Header("Observer Exercises");
-        Page37();
+        Page41();
     }
 
-    public static void Page37()
+    public static void Page41()
     {
-        LogUtils.SubHeader("Page 37");
+        LogUtils.SubHeader("Page 41");
 
         var currentConditionsDisplay = new CurrentConditionsDisplay();
         var statisticsDisplay = new StatisticsDisplay();
