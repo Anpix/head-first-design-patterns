@@ -4,9 +4,9 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Observer.Core.Displays;
 
-public class Display : Observers.Observer, IDisplay
+public class Displayable : Observers.Observable, IDisplay
 {
-    public Display(string name, ISubject subject) : base(name, subject)
+    public Displayable(string name, ISubject subject) : base(name, subject)
     {
     }
 

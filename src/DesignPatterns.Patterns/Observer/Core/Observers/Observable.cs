@@ -2,7 +2,7 @@ using DesignPatterns.Patterns.Observer.Core.Subjects;
 
 namespace DesignPatterns.Patterns.Observer.Core.Observers;
 
-public abstract class Observer : IObserver
+public abstract class Observable : IObserver
 {
     protected ISubject Subject;
     protected readonly string Name;
@@ -11,7 +11,7 @@ public abstract class Observer : IObserver
     protected float Humidity;
     protected float Pressure;
 
-    protected Observer(string name, ISubject subject)
+    protected Observable(string name, ISubject subject)
     {
         Name = name;
         Subject = subject;

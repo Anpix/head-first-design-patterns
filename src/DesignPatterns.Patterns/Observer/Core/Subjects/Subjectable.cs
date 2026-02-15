@@ -2,7 +2,7 @@ using DesignPatterns.Patterns.Observer.Core.Observers;
 
 namespace DesignPatterns.Patterns.Observer.Core.Subjects;
 
-public abstract class Subject : ISubject
+public abstract class Subjectable : ISubject
 {
     protected IList<IObserver> Observers { get; set; } = [];
 

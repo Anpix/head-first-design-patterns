@@ -4,7 +4,7 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Observer.Displays;
 
-public class ThirdPartDisplay : Display
+public class ThirdPartDisplay : Displayable
 {
     public ThirdPartDisplay(ISubject subject) : base("Third Part Display", subject)
     {
