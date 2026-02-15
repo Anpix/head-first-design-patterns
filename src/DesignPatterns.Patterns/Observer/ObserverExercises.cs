@@ -5,9 +5,9 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Observer;
 
-public class ObserverExercises : Exercise
+public class ObserverExercises : IExercise
 {
-    public override void Run()
+    public static void Run()
     {
         LogUtils.Header("Observer Exercises");
         Page42();

@@ -13,11 +13,11 @@ public static class ExercisesHandler
         switch (command)
         {
             case CommandEnum.STRATEGY:
-                new StrategyExercises().Run();
-                new StrategyPuzzles().Run();
+                StrategyExercises.Run();
+                StrategyPuzzles.Run();
                 break;
             case CommandEnum.OBSERVER:
-                new ObserverExercises().Run();
+                ObserverExercises.Run();
                 break;
             case CommandEnum.EXIT:
                 Environment.Exit(0);

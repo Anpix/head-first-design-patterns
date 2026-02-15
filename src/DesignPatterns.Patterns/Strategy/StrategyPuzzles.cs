@@ -5,9 +5,9 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Strategy;
 
-public class StrategyPuzzles : Exercise
+public class StrategyPuzzles : IExercise
 {
-    public override void Run()
+    public static void Run()
     {
         LogUtils.Header("Strategy Puzzles");
 
