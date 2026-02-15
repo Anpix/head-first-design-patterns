@@ -17,19 +17,35 @@ public class ObserverExercises : Exercise
     {
         LogUtils.SubHeader("Page 37");
 
+        var currentConditionsDisplay = new CurrentConditionsDisplay();
+        var statisticsDisplay = new StatisticsDisplay();
+        var forecastDisplay = new ForecastDisplay();
+        var thirdPartDisplay = new ThirdPartDisplay();
+
+        LogUtils.Info("Creating weather data...");
         var weatherData = new WeatherData();
-        weatherData.RegisterObserver(new CurrentConditionsDisplay());
-        weatherData.RegisterObserver(new StatisticsDisplay());
-        weatherData.RegisterObserver(new ForecastDisplay());
-        weatherData.RegisterObserver(new ThirdPartDisplay());
+        LogUtils.Info("Registering observers...");
+        weatherData.RegisterObserver(currentConditionsDisplay);
+        weatherData.RegisterObserver(statisticsDisplay);
+        weatherData.RegisterObserver(forecastDisplay);
+        weatherData.RegisterObserver(thirdPartDisplay);
 
         LogUtils.Info("Simulating weather data changes...");
-        for (int i = 0; i < 5; i++)
-        {
-            ConsoleUtils.WriteSeparator();
-            weatherData.MeasurementsChanged();
-            Thread.Sleep(200);
-        }
+        weatherData.MeasurementsChanged();
+        ConsoleUtils.WriteSeparator();
+
+        LogUtils.Info("Removing ThirdPartDisplay and StatisticsDisplay observers...");
+        weatherData.RemoveObserver(thirdPartDisplay);
+        weatherData.RemoveObserver(statisticsDisplay);
+        LogUtils.Info("Simulating weather data changes...");
+        weatherData.MeasurementsChanged();
+        ConsoleUtils.WriteSeparator();
+
+        LogUtils.Info("Adding back StatisticsDisplay observer...");
+        weatherData.RegisterObserver(statisticsDisplay);
+        LogUtils.Info("Simulating weather data changes...");
+        weatherData.MeasurementsChanged();
+        ConsoleUtils.WriteSeparator();
 
         LogUtils.Footer();
     }

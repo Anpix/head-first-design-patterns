@@ -1,12 +1,8 @@
-using DesignPatterns.Patterns.Observer.Core.Observers;
-using DesignPatterns.Patterns.Utils;
-
 namespace DesignPatterns.Patterns.Observer.Displays;
 
-public class ForecastDisplay : IObserver
+public class ForecastDisplay : Core.Observers.Observer
 {
-    public void Update(float temperature, float humidity, float pressure)
+    public ForecastDisplay() : base("Forecast Display")
     {
-        LogUtils.Info($"Forecast Display - Temperature: {temperature}°C, Humidity: {humidity}%, Pressure: {pressure} hPa");
     }
 }

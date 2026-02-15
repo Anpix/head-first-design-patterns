@@ -1,12 +1,8 @@
-using DesignPatterns.Patterns.Observer.Core.Observers;
-using DesignPatterns.Patterns.Utils;
-
 namespace DesignPatterns.Patterns.Observer.Displays;
 
-public class ThirdPartDisplay : IObserver
+public class ThirdPartDisplay : Core.Observers.Observer
 {
-    public void Update(float temperature, float humidity, float pressure)
+    public ThirdPartDisplay() : base("Third Part Display")
     {
-        LogUtils.Info($"Third Part Display - Temperature: {temperature}°C, Humidity: {humidity}%, Pressure: {pressure} hPa");
     }
 }
