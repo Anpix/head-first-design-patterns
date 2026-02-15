@@ -11,7 +11,7 @@ public class ObserverExercises : Exercise
     {
         LogUtils.Header("Observer Exercises");
         Page42();
-        Page43();
+        Page48();
     }
 
     public static void Page42()
@@ -57,9 +57,9 @@ public class ObserverExercises : Exercise
         LogUtils.Footer();
     }
 
-    public static void Page43()
+    public static void Page48()
     {
-        LogUtils.SubHeader("Page 43");
+        LogUtils.SubHeader("Page 48");
         WeatherStation.Run();
         LogUtils.Footer();
     }

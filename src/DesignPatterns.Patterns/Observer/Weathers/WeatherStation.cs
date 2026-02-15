@@ -17,6 +17,9 @@ public static class WeatherStation
 
         LogUtils.Warning("Simulating 1st weather data change...");
         weatherData.GenerateWeatherData();
+        LogUtils.Warning("Trying to notify observers without a real update...");
+        weatherData.NotifyObservers();
+        LogUtils.Info("Should not receive any updates");
         LogUtils.Warning("Simulating 2nd weather data change...");
         weatherData.GenerateWeatherData();
         LogUtils.Warning("Simulating 3rd weather data change...");
