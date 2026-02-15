@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/DesignPatterns.ConsoleApp/DesignPatterns.ConsoleApp.csproj" />
+    <Project Path="src/DesignPatterns.Patterns/DesignPatterns.Patterns.csproj" />
   </Folder>
 </Solution>

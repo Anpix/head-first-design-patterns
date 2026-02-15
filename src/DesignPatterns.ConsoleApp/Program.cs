@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DesignPatterns.Patterns.Strategy.Exercises;
+
+Console.WriteLine("Running Exercises...");
+var exercises = new StrategyExercises();
