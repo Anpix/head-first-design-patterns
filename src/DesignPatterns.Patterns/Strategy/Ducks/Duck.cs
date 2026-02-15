@@ -22,10 +22,20 @@ public abstract class Duck
     {
         Console.WriteLine($"-----");
         Console.WriteLine($"My name is {Name}.");
-        QuackBehavior?.Quack();
+        PerformQuack();
         Swim();
-        FlyBehavior?.Fly();
+        PerformFly();
         Display();
+    }
+
+    public void PerformQuack()
+    {
+        QuackBehavior?.Quack();
+    }
+
+    public void PerformFly()
+    {
+        FlyBehavior?.Fly();
     }
 
     public virtual void Swim()
