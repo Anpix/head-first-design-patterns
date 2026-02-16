@@ -4,5 +4,5 @@ public class Decaf : Beverage
 {
     public override string Description { get; set; } = "Decaf Coffee";
 
-    public override float Cost { get; set; } = 1.05f;
+    public override float BaseCost { get; set; } = 1.05f;
 }

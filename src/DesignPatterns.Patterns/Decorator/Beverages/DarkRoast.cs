@@ -4,5 +4,5 @@ public class DarkRoast : Beverage
 {
     public override string Description { get; set; } = "Dark Roast Coffee";
 
-    public override float Cost { get; set; } = 0.99f;
+    public override float BaseCost { get; set; } = 0.99f;
 }

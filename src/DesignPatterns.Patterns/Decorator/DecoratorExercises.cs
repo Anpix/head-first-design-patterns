@@ -9,21 +9,21 @@ public class DecoratorExercises : IExercise
     public static void Run()
     {
         LogUtils.Header("Decorator Exercises");
-        Page58();
+        Page60();
     }
 
-    private static void Page58()
+    private static void Page60()
     {
-        LogUtils.SubHeader(nameof(Page58));
+        LogUtils.SubHeader(nameof(Page60));
 
         var houseBlend = new HouseBlend();
-        LogUtils.Info($"Beverage: {houseBlend.Description}, Cost: {houseBlend.Cost:C}");
+        LogUtils.Info(houseBlend.Details());
         var darkRoast = new DarkRoast();
-        LogUtils.Info($"Beverage: {darkRoast.Description}, Cost: {darkRoast.Cost:C}");
+        LogUtils.Info(darkRoast.Details());
         var decaf = new Decaf();
-        LogUtils.Info($"Beverage: {decaf.Description}, Cost: {decaf.Cost:C}");
+        LogUtils.Info(decaf.Details());
         var espresso = new Espresso();
-        LogUtils.Info($"Beverage: {espresso.Description}, Cost: {espresso.Cost:C}");
+        LogUtils.Info(espresso.Details());
 
         LogUtils.Footer();
     }
