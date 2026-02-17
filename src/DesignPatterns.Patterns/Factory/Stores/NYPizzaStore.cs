@@ -1,4 +1,3 @@
-using DesignPatterns.Patterns.Factory.Factories;
 using DesignPatterns.Patterns.Factory.Pizzas;
 using DesignPatterns.Patterns.Factory.Styles;
 using DesignPatterns.Patterns.Utils;

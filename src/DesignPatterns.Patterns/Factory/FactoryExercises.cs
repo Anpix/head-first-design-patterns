@@ -9,12 +9,12 @@ public class FactoryExercises : IExercise
     public static void Run()
     {
         LogUtils.Header("Factory Exercises");
-        Page92();
+        Page94();
     }
 
-    private static void Page92()
+    private static void Page94()
     {
-        LogUtils.SubHeader(nameof(Page92));
+        LogUtils.SubHeader(nameof(Page94));
 
         var nyStore = new NYPizzaStore();
         LogUtils.EmptyLine();
@@ -30,7 +30,7 @@ public class FactoryExercises : IExercise
         nyStore.Order("clam");
         ConsoleUtils.WriteSeparator();
         nyStore.Order("veggie");
-
+        LogUtils.Footer();
 
         var chicagoStore = new ChicagoPizzaStore();
         LogUtils.EmptyLine();
@@ -46,6 +46,7 @@ public class FactoryExercises : IExercise
         chicagoStore.Order("clam");
         ConsoleUtils.WriteSeparator();
         chicagoStore.Order("veggie");
+        LogUtils.Footer();
 
         var californiaStore = new CaliforniaPizzaStore();
         LogUtils.EmptyLine();

@@ -1,6 +1,6 @@
 namespace DesignPatterns.Patterns.Factory.Pizzas;
 
-public class ClamPizza : Pizza
+public abstract class ClamPizza : Pizza
 {
 
 }
