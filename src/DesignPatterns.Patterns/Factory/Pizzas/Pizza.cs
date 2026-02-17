@@ -4,26 +4,25 @@ namespace DesignPatterns.Patterns.Factory.Pizzas;
 
 public class Pizza
 {
-
-
+    public string Name => this.GetType().Name;
 
     public void Prepare()
     {
-        LogUtils.Info("Preparing pizza...");
+        LogUtils.Info("Preparing...");
     }
 
     public void Bake()
     {
-        LogUtils.Info("Baking pizza...");
+        LogUtils.Info("Baking...");
     }
 
     public void Cut()
     {
-        LogUtils.Info("Cutting pizza...");
+        LogUtils.Info("Cutting...");
     }
 
     public void Box()
     {
-        LogUtils.Info("Boxing pizza...");
+        LogUtils.Info("Boxing...");
     }
 }

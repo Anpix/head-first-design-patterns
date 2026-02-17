@@ -5,19 +5,24 @@ public static class LogUtils
     public static void Header(string title, char character = '#')
     {
         ConsoleUtils.WriteCustomHeader(title, character);
-        Console.WriteLine();
+        EmptyLine();
     }
 
     public static void SubHeader(string title, char character = '=')
     {
         ConsoleUtils.WriteCustomHeader(title, character);
-        Console.WriteLine();
+        EmptyLine();
     }
 
     public static void Footer()
     {
-        Console.WriteLine();
-        Console.WriteLine();
+        EmptyLine();
+        EmptyLine();
+    }
+
+    public static void EmptyLine()
+    {
+        ConsoleUtils.Empty();
     }
 
     public static void Info(string message)
