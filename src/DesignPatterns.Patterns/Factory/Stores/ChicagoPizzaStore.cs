@@ -1,41 +1,39 @@
 using DesignPatterns.Patterns.Factory.Pizzas;
+using DesignPatterns.Patterns.Factory.Styles;
 using DesignPatterns.Patterns.Utils;
 
-namespace DesignPatterns.Patterns.Factory.Factories;
+namespace DesignPatterns.Patterns.Factory.Stores;
 
-public abstract class SimplePizzaFactory
+public class ChicagoPizzaStore : PizzaStore
 {
-    public string Name { get; init; } = "Simple Pizza Factory";
-
-    public SimplePizzaFactory(string name)
+    public ChicagoPizzaStore() : base("Chicago Pizza Store")
     {
-        Name = name;
-        LogUtils.Warning($"Creating {Name}...");
     }
 
-    public virtual Pizza CreatePizza(string type)
+    public override Pizza CreatePizza(string type)
     {
+
         Pizza pizza;
 
         if (type == "cheese")
         {
-            pizza = new CheesePizza();
+            pizza = new ChicagoStyleCheesePizza();
         }
         else if (type == "greek")
         {
-            pizza = new GreekPizza();
+            pizza = new ChicagoStyleGreekPizza();
         }
         else if (type == "pepperoni")
         {
-            pizza = new PepperoniPizza();
+            pizza = new ChicagoStylePepperoniPizza();
         }
         else if (type == "clam")
         {
-            pizza = new ClamPizza();
+            pizza = new ChicagoStyleClamPizza();
         }
         else if (type == "veggie")
         {
-            pizza = new VeggiePizza();
+            pizza = new ChicagoStyleVeggiePizza();
         }
         else
         {

@@ -1,6 +1,5 @@
 using DesignPatterns.Patterns.Core;
-using DesignPatterns.Patterns.Factory.Factories;
-using DesignPatterns.Patterns.Factory.Store;
+using DesignPatterns.Patterns.Factory.Stores;
 using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Factory;
@@ -10,29 +9,58 @@ public class FactoryExercises : IExercise
     public static void Run()
     {
         LogUtils.Header("Factory Exercises");
-        Page86();
+        Page92();
     }
 
-    private static void Page86()
+    private static void Page92()
     {
-        LogUtils.SubHeader(nameof(Page86));
+        LogUtils.SubHeader(nameof(Page92));
 
-        var nyFactory = new NYPizzaFactory();
-        var chicagoFactory = new ChicagoPizzaFactory();
-        var pizzaStore = new PizzaStore(nyFactory);
+        var nyStore = new NYPizzaStore();
         LogUtils.EmptyLine();
 
         LogUtils.Warning("Ordering pizzas...");
         ConsoleUtils.WriteSeparator();
-        pizzaStore.Order("cheese");
+        nyStore.Order("cheese");
         ConsoleUtils.WriteSeparator();
-        pizzaStore.Order("greek");
+        nyStore.Order("greek");
         ConsoleUtils.WriteSeparator();
-        pizzaStore.Order("pepperoni");
+        nyStore.Order("pepperoni");
         ConsoleUtils.WriteSeparator();
-        pizzaStore.Order("clam");
+        nyStore.Order("clam");
         ConsoleUtils.WriteSeparator();
-        pizzaStore.Order("veggie");
+        nyStore.Order("veggie");
+
+
+        var chicagoStore = new ChicagoPizzaStore();
+        LogUtils.EmptyLine();
+
+        LogUtils.Warning("Ordering pizzas...");
+        ConsoleUtils.WriteSeparator();
+        chicagoStore.Order("cheese");
+        ConsoleUtils.WriteSeparator();
+        chicagoStore.Order("greek");
+        ConsoleUtils.WriteSeparator();
+        chicagoStore.Order("pepperoni");
+        ConsoleUtils.WriteSeparator();
+        chicagoStore.Order("clam");
+        ConsoleUtils.WriteSeparator();
+        chicagoStore.Order("veggie");
+
+        var californiaStore = new CaliforniaPizzaStore();
+        LogUtils.EmptyLine();
+
+        LogUtils.Warning("Ordering pizzas...");
+        ConsoleUtils.WriteSeparator();
+        californiaStore.Order("cheese");
+        ConsoleUtils.WriteSeparator();
+        californiaStore.Order("greek");
+        ConsoleUtils.WriteSeparator();
+        californiaStore.Order("pepperoni");
+        ConsoleUtils.WriteSeparator();
+        californiaStore.Order("clam");
+        ConsoleUtils.WriteSeparator();
+        californiaStore.Order("veggie");
 
         LogUtils.Footer();
     }
