@@ -5,44 +5,22 @@ namespace DesignPatterns.Patterns.Factory.Store;
 
 public class PizzaStore
 {
+    SimplePizzaFactory Factory { get; init; }
+
+    public PizzaStore(SimplePizzaFactory simplePizzaFactory)
+    {
+        LogUtils.Warning("Creating Pizza Store...");
+        Factory = simplePizzaFactory;
+    }
 
     public virtual Pizza Order(string type)
     {
-        Pizza pizza;
-
-        if (type == "cheese")
-        {
-            pizza = new CheesePizza();
-        }
-        else if (type == "greek")
-        {
-            pizza = new GreekPizza();
-        }
-        else if (type == "pepperoni")
-        {
-            pizza = new PepperoniPizza();
-        }
-        else if (type == "clam")
-        {
-            pizza = new ClamPizza();
-        }
-        else if (type == "veggie")
-        {
-            pizza = new VeggiePizza();
-        }
-        else
-        {
-            throw new ArgumentException("Invalid pizza type");
-        }
-
-        LogUtils.Success($"Creating {pizza.Name}...");
+        Pizza pizza = Factory.CreatePizza(type);
 
         pizza.Prepare();
         pizza.Bake();
         pizza.Cut();
         pizza.Box();
-
-        LogUtils.EmptyLine();
 
         return pizza;
     }

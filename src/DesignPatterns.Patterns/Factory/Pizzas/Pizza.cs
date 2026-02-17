@@ -2,7 +2,7 @@ using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Factory.Pizzas;
 
-public class Pizza
+public abstract class Pizza
 {
     public string Name => this.GetType().Name;
 
