@@ -1,16 +1,19 @@
 using DesignPatterns.Patterns.Factory.Pizzas;
 using DesignPatterns.Patterns.Utils;
 
-namespace DesignPatterns.Patterns.Factory.Store;
+namespace DesignPatterns.Patterns.Factory.Factories;
 
-public class SimplePizzaFactory
+public abstract class SimplePizzaFactory
 {
-    public SimplePizzaFactory()
+    public string Name { get; init; } = "Simple Pizza Factory";
+
+    public SimplePizzaFactory(string name)
     {
-        LogUtils.Warning("Creating Simple Pizza Factory...");
+        Name = name;
+        LogUtils.Warning($"Creating {Name}...");
     }
 
-    public Pizza CreatePizza(string type)
+    public virtual Pizza CreatePizza(string type)
     {
         Pizza pizza;
 

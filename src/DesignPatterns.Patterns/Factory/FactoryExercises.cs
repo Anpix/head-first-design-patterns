@@ -1,4 +1,5 @@
 using DesignPatterns.Patterns.Core;
+using DesignPatterns.Patterns.Factory.Factories;
 using DesignPatterns.Patterns.Factory.Store;
 using DesignPatterns.Patterns.Utils;
 
@@ -9,15 +10,16 @@ public class FactoryExercises : IExercise
     public static void Run()
     {
         LogUtils.Header("Factory Exercises");
-        Page84();
+        Page86();
     }
 
-    private static void Page84()
+    private static void Page86()
     {
-        LogUtils.SubHeader(nameof(Page84));
+        LogUtils.SubHeader(nameof(Page86));
 
-        var factory = new SimplePizzaFactory();
-        var pizzaStore = new PizzaStore(factory);
+        var nyFactory = new NYPizzaFactory();
+        var chicagoFactory = new ChicagoPizzaFactory();
+        var pizzaStore = new PizzaStore(nyFactory);
         LogUtils.EmptyLine();
 
         LogUtils.Warning("Ordering pizzas...");

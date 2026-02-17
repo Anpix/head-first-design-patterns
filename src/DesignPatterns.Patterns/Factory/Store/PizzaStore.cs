@@ -1,3 +1,4 @@
+using DesignPatterns.Patterns.Factory.Factories;
 using DesignPatterns.Patterns.Factory.Pizzas;
 using DesignPatterns.Patterns.Utils;
 
@@ -9,8 +10,8 @@ public class PizzaStore
 
     public PizzaStore(SimplePizzaFactory simplePizzaFactory)
     {
-        LogUtils.Warning("Creating Pizza Store...");
         Factory = simplePizzaFactory;
+        LogUtils.Warning($"Creating Pizza Store with {Factory.Name}...");
     }
 
     public virtual Pizza Order(string type)
