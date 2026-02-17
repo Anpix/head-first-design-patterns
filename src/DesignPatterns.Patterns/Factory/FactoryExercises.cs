@@ -17,7 +17,11 @@ public class FactoryExercises : IExercise
         LogUtils.SubHeader(nameof(Page82));
 
         var pizzaStore = new PizzaStore();
-        pizzaStore.Order();
+        pizzaStore.Order("cheese");
+        pizzaStore.Order("greek");
+        pizzaStore.Order("pepperoni");
+        pizzaStore.Order("clam");
+        pizzaStore.Order("veggie");
 
         LogUtils.Footer();
     }
