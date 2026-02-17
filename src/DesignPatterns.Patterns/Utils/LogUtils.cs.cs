@@ -30,6 +30,11 @@ public static class LogUtils
         ConsoleUtils.WriteInfo(message);
     }
 
+    public static void Important(string message)
+    {
+        ConsoleUtils.WriteColor(message, ConsoleColor.Blue);
+    }
+
     public static void Success(string message)
     {
         ConsoleUtils.WriteColor(message, ConsoleColor.Green);
