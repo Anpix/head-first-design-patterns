@@ -19,5 +19,6 @@ public static class MainMenuHandler
         ConsoleUtils.WriteInfo("1. Strategy");
         ConsoleUtils.WriteInfo("2. Observer");
         ConsoleUtils.WriteInfo("3. Decorator");
+        ConsoleUtils.WriteInfo("4. Factory");
     }
 }
