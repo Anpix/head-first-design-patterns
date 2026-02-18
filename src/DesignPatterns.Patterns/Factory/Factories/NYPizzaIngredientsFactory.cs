@@ -19,11 +19,6 @@ public class NYPizzaIngredientsFactory : IPizzaIngredientsFactory
         return new MarinaraSauce();
     }
 
-    public Meat CreateMeat()
-    {
-        return new SlicedPepperoni();
-    }
-
     public Cheese CreateCheese()
     {
         return new ReggianoCheese();
@@ -32,6 +27,11 @@ public class NYPizzaIngredientsFactory : IPizzaIngredientsFactory
     public Clam CreateClam()
     {
         return new FreshClams();
+    }
+
+    public IList<Meat> CreateMeats()
+    {
+        return [new SlicedPepperoni()];
     }
 
     public IList<Veggie> CreateVeggies()

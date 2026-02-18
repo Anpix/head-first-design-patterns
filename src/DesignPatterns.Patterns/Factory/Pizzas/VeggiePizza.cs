@@ -1,4 +1,5 @@
 using DesignPatterns.Patterns.Factory.Factories;
+using DesignPatterns.Patterns.Factory.Ingredients;
 using DesignPatterns.Patterns.Utils;
 
 namespace DesignPatterns.Patterns.Factory.Pizzas;
@@ -14,11 +15,14 @@ public class VeggiePizza : Pizza
     public override void Prepare()
     {
         LogUtils.Info($"Preparing {Name}");
-        Dough = IngredientsFactory.CreateDough();
-        Sauce = IngredientsFactory.CreateSauce();
-        Cheese = IngredientsFactory.CreateCheese();
-        Meat = IngredientsFactory.CreateMeat();
-        Clam = IngredientsFactory.CreateClam();
-        Veggies = IngredientsFactory.CreateVeggies();
+        var ingredients = new List<Ingredient>
+        {
+            IngredientsFactory.CreateDough(),
+            IngredientsFactory.CreateSauce(),
+            IngredientsFactory.CreateCheese(),
+        };
+
+        ingredients.AddRange(IngredientsFactory.CreateVeggies());
+        Ingredients = ingredients;
     }
 }

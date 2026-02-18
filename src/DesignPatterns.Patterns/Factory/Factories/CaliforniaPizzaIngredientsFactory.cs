@@ -14,6 +14,12 @@ public class CaliforniaPizzaIngredientsFactory : IPizzaIngredientsFactory
     {
         return new ThinCrustDough();
     }
+
+    public Sauce CreateSauce()
+    {
+        return new MarinaraSauce();
+    }
+
     public Cheese CreateCheese()
     {
         return new ReggianoCheese();
@@ -21,17 +27,12 @@ public class CaliforniaPizzaIngredientsFactory : IPizzaIngredientsFactory
 
     public Clam CreateClam()
     {
-        return new FreshClams();
+        throw new NotImplementedException("Clams are not used in California style pizzas.");
     }
 
-    public Meat CreateMeat()
+    public IList<Meat> CreateMeats()
     {
-        return new SlicedPepperoni();
-    }
-
-    public Sauce CreateSauce()
-    {
-        return new MarinaraSauce();
+        return [new SlicedPepperoni()];
     }
 
     public IList<Veggie> CreateVeggies()

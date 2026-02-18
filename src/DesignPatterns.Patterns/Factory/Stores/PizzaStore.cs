@@ -15,47 +15,23 @@ public abstract class PizzaStore
         LogUtils.Warning($"Creating {Name}...");
     }
 
+    protected abstract Pizza? CreatePizza(string type);
 
-
-    public virtual Pizza CreatePizza(string type)
-    {
-        if (type == "cheese")
-        {
-            return new CheesePizza(IngredientsFactory);
-        }
-        else if (type == "greek")
-        {
-            return new GreekPizza(IngredientsFactory);
-        }
-        else if (type == "pepperoni")
-        {
-            return new PepperoniPizza(IngredientsFactory);
-        }
-        else if (type == "clam")
-        {
-            return new ClamPizza(IngredientsFactory);
-        }
-        else if (type == "veggie")
-        {
-            return new VeggiePizza(IngredientsFactory);
-        }
-        else
-        {
-            throw new ArgumentException("Invalid pizza type");
-        }
-    }
-
-    public virtual Pizza Order(string type)
+    public virtual void Order(string type)
     {
         LogUtils.Important($"Ordering a {type} pizza from {Name}...");
-        Pizza pizza = CreatePizza(type);
+
+        var pizza = CreatePizza(type);
+        if (pizza == null)
+        {
+            LogUtils.Error($"Sorry, we don't have this type of pizza ({type}) in {Name}.");
+            return;
+        }
 
         pizza.Describe();
         pizza.Prepare();
         pizza.Bake();
         pizza.Cut();
         pizza.Box();
-
-        return pizza;
     }
 }

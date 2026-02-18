@@ -9,6 +9,17 @@ namespace DesignPatterns.Patterns.Factory.Factories;
 
 public class ChicagoPizzaIngredientsFactory : IPizzaIngredientsFactory
 {
+
+    public Dough CreateDough()
+    {
+        return new ThickCrustDough();
+    }
+
+    public Sauce CreateSauce()
+    {
+        return new PlumTomatoSauce();
+    }
+
     public Cheese CreateCheese()
     {
         return new MozzarellaCheese();
@@ -19,19 +30,9 @@ public class ChicagoPizzaIngredientsFactory : IPizzaIngredientsFactory
         return new FrozenClams();
     }
 
-    public Dough CreateDough()
+    public IList<Meat> CreateMeats()
     {
-        return new ThickCrustDough();
-    }
-
-    public Meat CreateMeat()
-    {
-        return new SlicedPepperoni();
-    }
-
-    public Sauce CreateSauce()
-    {
-        return new PlumTomatoSauce();
+        return [new SlicedPepperoni()];
     }
 
     public IList<Veggie> CreateVeggies()

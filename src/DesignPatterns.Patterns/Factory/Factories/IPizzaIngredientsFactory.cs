@@ -11,8 +11,8 @@ public interface IPizzaIngredientsFactory
 {
     public abstract Dough CreateDough();
     public abstract Sauce CreateSauce();
-    public abstract Meat CreateMeat();
-    public abstract IList<Veggie> CreateVeggies();
     public abstract Cheese CreateCheese();
     public abstract Clam CreateClam();
+    public abstract IList<Meat> CreateMeats();
+    public abstract IList<Veggie> CreateVeggies();
 }
