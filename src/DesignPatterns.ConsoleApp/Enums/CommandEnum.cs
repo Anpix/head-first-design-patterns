@@ -8,4 +8,5 @@ public enum CommandEnum
     OBSERVER = 2,
     DECORATOR = 3,
     FACTORY = 4,
+    SINGLETON = 5,
 }
