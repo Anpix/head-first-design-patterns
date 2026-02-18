@@ -1,5 +1,6 @@
 using DesignPatterns.ConsoleApp.Enums;
 using DesignPatterns.Patterns.Decorator;
+using DesignPatterns.Patterns.Factory;
 using DesignPatterns.Patterns.Observer;
 using DesignPatterns.Patterns.Strategy;
 using DesignPatterns.Patterns.Utils;
@@ -22,6 +23,9 @@ public static class ExercisesHandler
                 break;
             case CommandEnum.DECORATOR:
                 DecoratorExercises.Run();
+                break;
+            case CommandEnum.FACTORY:
+                FactoryExercises.Run();
                 break;
             case CommandEnum.EXIT:
                 Environment.Exit(0);

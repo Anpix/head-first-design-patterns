@@ -6,5 +6,6 @@ public enum CommandEnum
     EXIT = 0,
     STRATEGY = 1,
     OBSERVER = 2,
-    DECORATOR = 3
+    DECORATOR = 3,
+    FACTORY = 4,
 }
